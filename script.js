@@ -8,6 +8,7 @@ function onReady() {
 $('#squareButton').on('click', createBox);
 //button
 $('#hey').on('click', '.box',  changeToBlack);
+$('#hey').on('click', '.xit', closeBox);
 
 }
 //change selected box to black
@@ -15,6 +16,9 @@ $('#hey').on('click', '.box',  changeToBlack);
 function createBox(){
  var $d = $('<div>');
  $d.addClass('box');
+ var $xit = $('<div>x</div>');
+ $xit.addClass('xit');
+ $d.append($xit);
 
 var $color = randomColor();
 $d.css('background-color', $color);
@@ -33,3 +37,6 @@ function randomColor(){
 //function randomNumber(min, max){
     //return Math.floor(Math.random() * (1 + max - min) + min);
 //}
+function closeBox () {
+  $(this).parent().remove();
+}
